@@ -18,7 +18,7 @@ PIPELINE = ['Submitted', 'No Response', 'Rejected', 'OA', '1st Round', '2nd Roun
 
 # DATA INGESTER
 # replace path name with your version of template.csv!
-with open('./data.csv', newline='', encoding='utf-8-sig') as f:
+with open('./mock_large_applications.csv', newline='', encoding='utf-8-sig') as f:
     reader = csv.DictReader(f)
     for row in reader:
         company  = row['Company Name'].strip()
@@ -353,11 +353,3 @@ plt.tight_layout()
 plt.savefig('salary_boxplot.png', dpi=150, bbox_inches='tight', facecolor='#FAFAF8')
 plt.close()
 print("  Saved → salary_boxplot.png")
-
-        
-
-        
-
-
-
-
