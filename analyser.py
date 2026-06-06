@@ -18,7 +18,7 @@ PIPELINE = ['Submitted', 'No Response', 'Rejected', 'OA', '1st Round', '2nd Roun
 
 # DATA INGESTER
 # replace path name with your version of template.csv!
-with open('./mock_large_applications.csv', newline='', encoding='utf-8-sig') as f:
+with open('./data.csv', newline='', encoding='utf-8-sig') as f:
     reader = csv.DictReader(f)
     for row in reader:
         company  = row['Company Name'].strip()
@@ -272,7 +272,7 @@ ax.set_title(
 )
 
 plt.tight_layout()
-plt.savefig('sankey.png', dpi=180, bbox_inches='tight', facecolor=BG)
+plt.savefig('./outputs/sankey.png', dpi=180, bbox_inches='tight', facecolor=BG)
 plt.close()
 print("\n  Saved → sankey.png")
  
@@ -295,7 +295,7 @@ for bar, count in zip(bars, counts):
     ax.text(bar.get_width() + 0.2, bar.get_y() + bar.get_height() / 2,
             str(count), va='center', fontsize=9, color='#5F5E5A')
 plt.tight_layout()
-plt.savefig('status_bar.png', dpi=150, bbox_inches='tight', facecolor='#FAFAF8')
+plt.savefig('./outputs/status_bar.png', dpi=150, bbox_inches='tight', facecolor='#FAFAF8')
 plt.close()
 print("  Saved → status_bar.png")
  
@@ -317,7 +317,7 @@ ax.set_title('Applications by Industry', fontsize=12, fontweight='bold', color='
 ax.legend(wedges, ind_labels, loc='lower center', bbox_to_anchor=(0.5, -0.12),
           ncol=2, fontsize=9, frameon=False)
 plt.tight_layout()
-plt.savefig('industry_donut.png', dpi=150, bbox_inches='tight', facecolor='#FAFAF8')
+plt.savefig('./outputs/industry_donut.png', dpi=150, bbox_inches='tight', facecolor='#FAFAF8')
 plt.close()
 print("  Saved → industry_donut.png")
  
@@ -350,6 +350,6 @@ ax.xaxis.grid(True, color='#D3D1C7', linewidth=0.5)
 ax.tick_params(colors='#5F5E5A')
 ax.set_axisbelow(True)
 plt.tight_layout()
-plt.savefig('salary_boxplot.png', dpi=150, bbox_inches='tight', facecolor='#FAFAF8')
+plt.savefig('./outputs/salary_boxplot.png', dpi=150, bbox_inches='tight', facecolor='#FAFAF8')
 plt.close()
 print("  Saved → salary_boxplot.png")
